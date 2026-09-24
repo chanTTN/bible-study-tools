@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Study Tools - JesusOnline Equip</title>
+  <meta name="description" content="Great sermons and Bible teaching begin with careful study of God's Word. Free tools including NET Bible, Bible Gateway, Bible Hub, Bible Study Tools, and more from JesusOnline Equip.">
+  
+  <!-- Google Fonts: Inter & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+/* ==========================================================================
+   JesusOnline Equip Replica x Logos TOC & Accordion System
+   ========================================================================== */
+
+:root {
+  --jo-navy-dark: #0a192f;
+  --jo-navy: #0f2942;
+  --jo-navy-light: #16385c;
+  --jo-blue: #1e6afe;
+  --jo-blue-hover: #1555d3;
+  --jo-blue-light: #eef5ff;
+  --jo-gold: #f59e0b;
+  --jo-gold-hover: #d97706;
+  --jo-gold-light: #fef3c7;
+  
+  --jo-text-main: #1f2937;
+  --jo-text-muted: #4b5563;
+  --jo-text-light: #6b7280;
+  --jo-bg-main: #ffffff;
+  --jo-bg-subtle: #f8fafc;
+  --jo-border: #e2e8f0;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Merriweather', Georgia, Cambria, serif;
+
+  --header-height: 72px;
+  --max-content-width: 1240px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+
+  --transition-fast: 0.15s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--jo-text-main);
+  background-color: var(--jo-bg-subtle);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--jo-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--jo-blue-hover);
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--jo-navy);
+  color: #ffffff;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reading Progress Bar (Logos Feature) */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--jo-gold) 0%, var(--jo-blue) 100%);
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.1s ease-out;
+}
+
+/* Main Site Header (equip.jesusonline.com Replica) */
+.jo-main-header {
+  background-color: var(--jo-navy);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
+}
+
+.jo-navbar {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  height: var(--header-height);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.jo-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none !important;
+}
+
+.jo-logo-symbol {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--jo-blue) 0%, #0d47a1 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 8px rgba(30, 106, 254, 0.4);
+}
+
+.jo-brand-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.jo-brand-title span {
+  color: var(--jo-gold);
+}
+
+.jo-badge-pill {
+  background-color: var(--jo-gold);
+  color: #78350f;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  margin-left: 4px;
+}
+
+.jo-brand-subtitle {
+  color: #93c5fd;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.jo-nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.jo-nav-link {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.jo-nav-link:hover, .jo-nav-link.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.jo-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-jo-app {
+  background: linear-gradient(135deg, var(--jo-gold) 0%, #ea580c 100%);
+  color: #ffffff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.15rem;
+  border-radius: var(--radius-full);
+  text-decoration: none !important;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Page Header & Breadcrumbs Section */
+.article-hero {
+  background: linear-gradient(180deg, #ffffff 0%, var(--jo-bg-subtle) 100%);
+  border-bottom: 1px solid var(--jo-border);
+  padding: 2.5rem 1.5rem 2rem;
+}
+
+.hero-inner {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--jo-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--jo-text-muted);
+}
+
+.breadcrumb-current {
+  color: var(--jo-text-main);
+  font-weight: 600;
+}
+
+.hero-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.article-category-tag {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: var(--jo-blue);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.article-main-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--jo-navy);
+  margin-bottom: 0.75rem;
+}
+
+.article-lead {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--jo-text-muted);
+  max-width: 820px;
+}
+
+.btn-download-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: var(--jo-navy) !important;
+  border: 1.5px solid var(--jo-border);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.btn-download-pdf:hover {
+  background: var(--jo-blue-light);
+  border-color: var(--jo-blue);
+  color: var(--jo-blue) !important;
+}
+
+/* Page Body Layout */
+.page-body-container {
+  max-width: var(--max-content-width);
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.article-content-col {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--jo-border);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Logos In-Content Table of Contents */
+.logos-toc-container {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid var(--jo-blue);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.logos-toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.logos-toc-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--jo-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logos-toc-subtitle {
+  font-size: 0.925rem;
+  color: var(--jo-text-muted);
+  margin-bottom: 1rem;
+}
+
+.logos-toc-toggle-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: var(--jo-text-muted);
+  cursor: pointer;
+}
+
+.logos-toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.6rem;
+}
+
+.logos-toc-link {
+  color: var(--jo-text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.logos-toc-link::before {
+  content: "→";
+  color: var(--jo-blue);
+  font-weight: bold;
+}
+
+.logos-toc-link:hover {
+  color: var(--jo-blue);
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+/* Logos Accordion Styling */
+.accordion-controls-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 0.5rem;
+}
+
+.btn-accordion-control {
+  background: #f1f5f9;
+  border: 1px solid var(--jo-border);
+  color: var(--jo-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.content-section {
+  margin-bottom: 1.25rem;
+  scroll-margin-top: 90px;
+}
+
+.c-accordion__item {
+  border: 1px solid var(--jo-border);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.c-accordion__item.is-open {
+  border-color: #bfdbfe;
+  box-shadow: 0 2px 8px rgba(30, 106, 254, 0.08);
+}
+
+.c-accordion__title {
+  cursor: pointer;
+  padding: 1.15rem 1.25rem;
+  padding-right: 3rem;
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--jo-navy);
+  margin: 0;
+  user-select: none;
+  transition: all var(--transition-fast);
+}
+
+.c-accordion__title:hover {
+  background-color: var(--jo-bg-subtle);
+  color: var(--jo-blue);
+}
+
+.c-accordion__item.is-open > .c-accordion__title {
+  background-color: var(--jo-blue-light);
+  border-bottom: 1px solid #dbeafe;
+}
+
+/* Logos Indicator (+ / −) */
+.c-accordion__title::after {
+  content: "+";
+  color: var(--jo-blue);
+  font-size: 1.45rem;
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+.c-accordion__item.is-open > .c-accordion__title::after {
+  content: "−";
+  font-weight: 600;
+  color: var(--jo-blue-hover);
+}
+
+.c-accordion__content {
+  display: none;
+  padding: 1.35rem;
+  background-color: #ffffff;
+}
+
+.c-accordion__item.is-open > .c-accordion__content {
+  display: block;
+}
+
+.wp-block-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.wp-block-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Links & Buttons Inside Tools */
+.tool-action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--jo-blue);
+  color: #ffffff !important;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+}
+
+.tool-btn:hover {
+  background: var(--jo-blue-hover);
+}
+
+.tool-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--jo-bg-subtle);
+  color: var(--jo-navy) !important;
+  border: 1px solid var(--jo-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+}
+
+.tool-btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--jo-blue);
+  color: var(--jo-blue) !important;
+}
+
+.resource-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.resource-badge-link {
+  display: block;
+  background: var(--jo-bg-subtle);
+  border: 1px solid var(--jo-border);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--jo-text-main) !important;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all var(--transition-fast);
+}
+
+.resource-badge-link:hover {
+  background: var(--jo-blue-light);
+  border-color: #bfdbfe;
+  color: var(--jo-blue) !important;
+}
+
+.feature-bullet-list {
+  list-style: none;
+  margin: 1rem 0 0.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature-bullet-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  color: var(--jo-text-main);
+  line-height: 1.6;
+}
+
+.feature-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--jo-blue);
+  font-weight: bold;
+}
+
+.highlight-link {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Logos Sticky Sidebar TOC */
+.sidebar-sticky-wrapper {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-toc-box {
+  background: #ffffff;
+  border: 1px solid var(--jo-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-toc-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--jo-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--jo-border);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-toc-link {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--jo-text-muted);
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-toc-link:hover {
+  color: var(--jo-navy);
+  background-color: var(--jo-bg-subtle);
+  text-decoration: none;
+}
+
+.sidebar-toc-link.active {
+  color: var(--jo-blue);
+  background-color: var(--jo-blue-light);
+  border-left-color: var(--jo-blue);
+  font-weight: 600;
+}
+
+.sidebar-promo-card {
+  background: linear-gradient(135deg, var(--jo-navy) 0%, var(--jo-navy-light) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.sidebar-promo-badge {
+  background-color: var(--jo-gold);
+  color: #78350f;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-promo-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar-promo-desc {
+  font-size: 0.825rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.btn-sidebar-cta {
+  background: var(--jo-gold);
+  color: #1e293b !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  display: block;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+/* Footer Replica */
+.jo-site-footer {
+  background-color: var(--jo-navy-dark);
+  color: #94a3b8;
+  padding: 3.5rem 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
+}
+
+.footer-inner-grid {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand-col p {
+  font-size: 0.925rem;
+  color: #94a3b8;
+  margin: 1rem 0 0.5rem;
+}
+
+.footer-col-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links-list a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--jo-gold);
+}
+
+.footer-bottom-bar {
+  max-width: var(--max-content-width);
+  margin: 1.5rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a {
+  color: #64748b;
+}
+
+
+/* Additional SEO Content Sections */
+.article-section-heading { font-family: var(--font-serif); font-size: 1.75rem; line-height: 1.35; color: var(--jo-navy); margin: 2.5rem 0 1.25rem; }
+.additional-content-block { margin-bottom: 1.5rem; }
+.additional-content-block h3 { font-size: 1.2rem; line-height: 1.45; color: var(--jo-navy); margin-bottom: 0.5rem; }
+.numbered-benefit-list { margin: 1rem 0 0 1.5rem; padding-left: 0.75rem; color: var(--jo-text-main); }
+.numbered-benefit-list li { padding-left: 0.35rem; margin-bottom: 0.85rem; font-size: 1rem; line-height: 1.65; }
+.faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--jo-border); }
+.faq-item:first-of-type { padding-top: 0.25rem; }
+.faq-item:last-child { border-bottom: 0; }
+.faq-item h4 { font-size: 1.1rem; line-height: 1.45; color: var(--jo-navy); margin-bottom: 0.6rem; }
+
+@media (max-width: 1024px) {
+  .page-body-container { grid-template-columns: 1fr; }
+  .sidebar-sticky-wrapper { position: static; margin-top: 2rem; }
+  .footer-inner-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero-header-row { flex-direction: column; align-items: stretch; }
+  .btn-download-pdf { justify-content: center; }
+  .jo-nav-menu { display: none; }
+  .mobile-menu-btn { display: block; }
+  .article-main-title { font-size: 2rem; }
+  .article-content-col { padding: 1.5rem; }
+  .footer-inner-grid { grid-template-columns: 1fr; }
+  .footer-bottom-bar { flex-direction: column; gap: 1rem; text-align: center; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" aria-hidden="true"></div>
+
+  <!-- Main Sticky Header (equip.jesusonline.com Replica) -->
+  <header class="jo-main-header">
+    <div class="jo-navbar">
+      <a href="https://equip.jesusonline.com/" class="jo-brand-wrap" aria-label="JesusOnline JO EQUIP">
+        <div class="jo-logo-symbol">JO</div>
+        <div class="jo-brand-text">
+          <div class="jo-brand-title">Jesus<span>Online</span> <span class="jo-badge-pill">EQUIP</span></div>
+          <div class="jo-brand-subtitle">Ministry Resources Hub</div>
+        </div>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="jo-nav-menu" aria-label="Main Navigation">
+        <a href="https://equip.jesusonline.com/equip" class="jo-nav-link">Equip</a>
+        <a href="https://equip.jesusonline.com/categories" class="jo-nav-link active">Categories</a>
+        <a href="https://equip.jesusonline.com/playlists" class="jo-nav-link">Playlists</a>
+        <a href="https://equip.jesusonline.com/books" class="jo-nav-link">Books</a>
+        <a href="https://equip.jesusonline.com/more" class="jo-nav-link">More</a>
+      </nav>
+
+      <!-- Header Action -->
+      <div class="jo-header-actions">
+        <a href="https://app.jesusonline.com" class="btn-jo-app" target="_blank" rel="noopener">
+          JO App
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header & Breadcrumbs Section -->
+  <section class="article-hero">
+    <div class="hero-inner">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="https://equip.jesusonline.com/categories">Categories</a></li>
+          <li class="breadcrumb-sep">/</li>
+          <li><a href="https://equip.jesusonline.com/categories/church">Church</a></li>
+          <li class="breadcrumb-sep">/</li>
+          <li class="breadcrumb-current" aria-current="page">Bible Study Tools</li>
+        </ol>
+      </nav>
+
+      <div class="hero-header-row">
+        <div>
+          <span class="article-category-tag">CHURCH RESOURCES</span>
+          <h1 class="article-main-title">Bible Study Tools</h1>
+          <p class="article-lead">
+            Great sermons and Bible teaching begin with careful study of God's Word. The free tools below put translations, commentaries, original-language helps, and study resources within reach of every pastor, teacher, and serious Bible student.
+          </p>
+        </div>
+        
+        <div class="hero-download-action">
+          <a href="https://equip.jesusonline.com/articles/bsm/essential-bible-study-tools.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <div class="page-body-container" id="main-content">
+    
+    <!-- Left Column: Main Body -->
+    <main class="article-content-col">
+
+      <!-- In-Content Table of Contents (Logos Feature) -->
+      <div class="logos-toc-container" id="in-content-toc">
+        <div class="logos-toc-header">
+          <h2 class="logos-toc-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+            </svg>
+            Table of Contents
+          </h2>
+          <button type="button" class="logos-toc-toggle-btn" id="btn-toggle-incontent-toc" aria-expanded="true">[Hide]</button>
+        </div>
+        <p class="logos-toc-subtitle">Read from top to bottom or click a resource below to jump directly to it.</p>
+        
+        <ul class="logos-toc-list" id="incontent-toc-list">
+          <li class="logos-toc-item"><a href="#net-bible" class="logos-toc-link">1. NET Bible</a></li>
+          <li class="logos-toc-item"><a href="#bible-gateway" class="logos-toc-link">2. Bible Gateway</a></li>
+          <li class="logos-toc-item"><a href="#bible-hub" class="logos-toc-link">3. Bible Hub</a></li>
+          <li class="logos-toc-item"><a href="#bible-study-tools" class="logos-toc-link">4. Bible Study Tools</a></li>
+          <li class="logos-toc-item"><a href="#bibleproject" class="logos-toc-link">5. BibleProject</a></li>
+          <li class="logos-toc-item"><a href="#the-gospel-coalition" class="logos-toc-link">6. The Gospel Coalition</a></li>
+          <li class="logos-toc-item"><a href="#navigators-tools" class="logos-toc-link">7. The Navigators Tools</a></li>
+          <li class="logos-toc-item"><a href="#bible-translations" class="logos-toc-link">8. Bible Translations</a></li>
+          <li class="logos-toc-item"><a href="#scripture-memorization" class="logos-toc-link">9. Scripture Memorization</a></li>
+          <li class="logos-toc-item"><a href="#ministry-needs" class="logos-toc-link">10. Bible Study Tools for Different Ministry Needs</a></li>
+          <li class="logos-toc-item"><a href="#why-free-online-tools" class="logos-toc-link">11. Why Consider Free Online Bible Study Tools from JO EQUIP?</a></li>
+          <li class="logos-toc-item"><a href="#faqs" class="logos-toc-link">12. FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Master Accordion Controls -->
+      <div class="accordion-controls-bar">
+        <button type="button" class="btn-accordion-control" id="btn-expand-all">Expand All</button>
+        <button type="button" class="btn-accordion-control" id="btn-collapse-all">Collapse All</button>
+      </div>
+
+      <!-- SECTION 1: NET Bible -->
+      <section class="content-section" id="net-bible">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item is-open" 
+             data-initially-open="true" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            NET Bible
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              The NET (New English Translation) Bible is available in the JO App (<a href="https://app.jesusonline.com" target="_blank" rel="noopener">app.jesusonline.com</a>). <a href="https://app.jesusonline.com/reader" target="_blank" rel="noopener" class="highlight-link">Read the NET Bible on the JO App</a>.
+            </p>
+            <p class="wp-block-paragraph">
+              NET Bible also offers a free online Bible at <a href="https://netbible.org/" target="_blank" rel="noopener">netbible.org</a>. This site provides 60,932 notes by more than 25 scholars &mdash; experts in the original biblical languages &mdash; who translated the NET Bible directly from the best currently available Hebrew, Aramaic, and Greek texts. The website is a great reference source for serious Bible students.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://app.jesusonline.com/reader" target="_blank" rel="noopener" class="tool-btn">Read on JO App &rarr;</a>
+              <a href="https://netbible.org/" target="_blank" rel="noopener" class="tool-btn-secondary">Visit netbible.org &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Bible Gateway -->
+      <section class="content-section" id="bible-gateway">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            Bible Gateway
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              <a href="https://www.biblegateway.com/" target="_blank" rel="noopener"><strong>Bible Gateway</strong></a> (biblegateway.com) is a searchable online Bible tool hosting more than 200 versions of the Bible in over 70 languages that you can freely read, research, and reference anywhere. Including a library of audio Bibles, mobile apps, devotionals, email newsletters, and other free resources, Bible Gateway equips you not only to read the Bible, but to understand it.
+            </p>
+            <div class="resource-links-grid">
+              <a href="https://www.biblegateway.com/passage/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Lookup Passage</a>
+              <a href="https://www.biblegateway.com/keyword/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Keyword Search</a>
+              <a href="https://www.biblegateway.com/topical/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Topical Index</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Bible Hub -->
+      <section class="content-section" id="bible-hub">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            Bible Hub
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              <a href="https://biblehub.com/" target="_blank" rel="noopener"><strong>Bible Hub</strong></a> (biblehub.com) is an online parallel Bible with search and study tools including parallel texts, cross references, Treasury of Scripture, and commentaries. This site provides quick access to topical studies, interlinears, sermons, Strong's and many more resources, and is a great way to link any verse on your site to an instant menu of 25 versions. This website allows you to:
+            </p>
+            <ul class="feature-bullet-list">
+              <li><strong>Search:</strong> Enter any combination of book, abbreviation, chapter, verse, or keyword.</li>
+              <li><strong>Read:</strong> Click any version name to read the full chapter for that text.</li>
+              <li>
+                <strong>Study:</strong> Click any study tab to view 
+                <a href="https://biblehub.com/sermons/matthew/1-1.htm" target="_blank" rel="noopener">sermons</a>, 
+                <a href="https://biblehub.com/topical/matthew/1-1.htm" target="_blank" rel="noopener">topics</a>, 
+                <a href="https://biblehub.com/commentaries/matthew/1-1.htm" target="_blank" rel="noopener">commentaries</a>, 
+                <a href="https://biblehub.com/interlinear/" target="_blank" rel="noopener">interlinear</a>, 
+                <a href="https://biblehub.com/strongs.htm" target="_blank" rel="noopener">Strong's</a>, or 
+                <a href="https://biblehub.com/text/matthew/1-1.htm" target="_blank" rel="noopener">Greek and Hebrew</a> for your passage.
+              </li>
+            </ul>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Bible Study Tools -->
+      <section class="content-section" id="bible-study-tools">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            Bible Study Tools
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              <a href="https://www.biblestudytools.com/" target="_blank" rel="noopener"><strong>Bible Study Tools</strong></a> (biblestudytools.com) is the largest free online Bible website for verse search and in-depth studies. It aims to offer the freshest and most compelling biblically-based content to Christians who take their relationship with Christ seriously, giving Christians of any age and at any stage the opportunity to read, study, understand, and apply the Bible to their lives. With free devotionals, study guides, helpful articles, and rich personalization functions, visitors can make the most of their Bible study time and unlock its meaning:
+            </p>
+            <div class="resource-links-grid">
+              <a href="https://www.biblestudytools.com/devotionals/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Devotionals</a>
+              <a href="https://www.biblestudytools.com/topical-verses/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Topical Verses</a>
+              <a href="https://www.biblestudytools.com/commentaries/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Bible Commentaries</a>
+              <a href="https://www.biblestudytools.com/concordances/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Bible Concordances</a>
+              <a href="https://www.biblestudytools.com/dictionaries/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Bible Dictionaries</a>
+              <a href="https://www.biblestudytools.com/encyclopedias/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Encyclopedias</a>
+              <a href="https://www.biblestudytools.com/history/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Church History</a>
+              <a href="https://www.biblestudytools.com/classics/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Christian Classics</a>
+              <a href="https://www.biblestudytools.com/pastor-resources/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Pastor Resources</a>
+              <a href="https://www.biblestudytools.com/sunday-school-lessons/" target="_blank" rel="noopener" class="resource-badge-link">&bull; Sunday School Lessons</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: BibleProject -->
+      <section class="content-section" id="bibleproject">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            BibleProject
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              Explore the <a href="https://bibleproject.com/explore/" target="_blank" rel="noopener">BibleProject animated videos</a> about the books of the Bible and various Bible themes like Holiness, Holy Spirit, The Messiah, The Covenants, and many more.
+            </p>
+            <p class="wp-block-paragraph">
+              From page one to the final word, the Bible is a unified story that leads to Jesus. In addition to videos and podcasts, their Bible resources help people experience the Bible in a way that is approachable, engaging, and transformative.
+            </p>
+            <p class="wp-block-paragraph">
+              To learn more about their ministry and find Bible study resources, visit <a href="https://bibleproject.com/" target="_blank" rel="noopener">bibleproject.com</a>.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://bibleproject.com/explore/" target="_blank" rel="noopener" class="tool-btn">Explore Animated Videos &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: The Gospel Coalition -->
+      <section class="content-section" id="the-gospel-coalition">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            The Gospel Coalition
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              <a href="https://www.thegospelcoalition.org/" target="_blank" rel="noopener"><strong>The Gospel Coalition</strong></a> is a global fellowship of evangelical churches in the Reformed tradition deeply committed to renewing our faith in the gospel of Christ and to reforming our ministry practices to conform fully to the Scriptures.
+            </p>
+            <p class="wp-block-paragraph">
+              Their website (thegospelcoalition.org) offers daily Bible reading and devotionals, articles, blogs, commentary, essays, and other resources. They also offer different country editions in several different languages.
+            </p>
+            <p class="wp-block-paragraph">
+              Try their <a href="https://www.thegospelcoalition.org/commentary/" target="_blank" rel="noopener">Bible commentary in the U.S. Edition</a>.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://www.thegospelcoalition.org/commentary/" target="_blank" rel="noopener" class="tool-btn">Access TGC Commentary &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: The Navigators Bible Study Tools -->
+      <section class="content-section" id="navigators-tools">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            The Navigators Bible Study Tools
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              The Navigators is a ministry that shares the gospel of Jesus and helps people grow in their relationship with Him through <a href="https://www.navigators.org/life-to-life/" target="_blank" rel="noopener">Life-to-Life&reg;</a> discipleship, creating spiritual generations of believers.
+            </p>
+            <p class="wp-block-paragraph">
+              Browse through their <a href="https://www.navigators.org/resource/bible-study-tools/" target="_blank" rel="noopener">most popular Bible study tools</a>, including free PDF downloads, book excerpts, and even full eBooks. As you explore these Bible study resources, discover new and fresh ways to read and apply Scripture.
+            </p>
+            <p class="wp-block-paragraph">
+              Visit <a href="https://www.navigators.org/resource/" target="_blank" rel="noopener">The Navigators</a> for more resources.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://www.navigators.org/resource/bible-study-tools/" target="_blank" rel="noopener" class="tool-btn">Browse Navigators Tools &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: English Bible Translations -->
+      <section class="content-section" id="bible-translations">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            English Bible Translations
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              The original manuscripts of the Bible &mdash; known as the autographs &mdash; were written by their respective authors but have not survived. Nevertheless, the biblical text has been faithfully preserved and transmitted through thousands of ancient manuscripts and fragments discovered around the world.
+            </p>
+            <p class="wp-block-paragraph">
+              The Scriptures were originally composed in Hebrew (most of the Old Testament), Aramaic (small portions of the Old Testament), and Greek (the entire New Testament). Biblical scholars carefully study and compare these and other Latin manuscripts to produce accurate translations of the Bible into modern languages.
+            </p>
+            <p class="wp-block-paragraph">
+              Today, there are many English versions of the Bible. &ldquo;<a href="https://www.olivetree.com/blog/a-guide-to-finding-the-right-bible-translation/" target="_blank" rel="noopener">A Guide to Finding the Right Bible Translation</a>&rdquo; by Olive Tree Bible Software will help you understand different English translations.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://www.olivetree.com/blog/a-guide-to-finding-the-right-bible-translation/" target="_blank" rel="noopener" class="tool-btn">Read Olive Tree Guide &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: Scripture Memorization -->
+      <section class="content-section" id="scripture-memorization">
+        <div class="wp-block-pb-accordion-item c-accordion__item js-accordion-item" 
+             data-initially-open="false" 
+             data-click-to-close="true" 
+             data-auto-close="false">
+          <h2 class="c-accordion__title js-accordion-controller" role="button">
+            Scripture Memorization
+          </h2>
+          <div class="c-accordion__content">
+            <p class="wp-block-paragraph">
+              The Navigators shows you how to memorize Scripture with a proven method. Read the article, &ldquo;<a href="https://www.navigators.org/resource/how-to-memorize-scripture/" target="_blank" rel="noopener">How to Memorize Scripture</a>.&rdquo;
+            </p>
+            <p class="wp-block-paragraph">
+              The <a href="https://www.navigators.org/resource/topical-memory-system/" target="_blank" rel="noopener"><strong>Topical Memory System (TMS)</strong></a> is a simple, easy-to-use system for memorizing key Bible verses that point to essential gospel truths.
+            </p>
+            <div class="tool-action-links">
+              <a href="https://www.navigators.org/resource/topical-memory-system/" target="_blank" rel="noopener" class="tool-btn">Explore Topical Memory System &rarr;</a>
+            </div>
+            <!-- CLIENT CONTENT INJECTION POINT -->
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW ADDITION: Bible Study Tools for Different Ministry Needs -->
+      <section class="content-section" id="ministry-needs">
+        <h2 class="article-section-heading">Bible Study Tools for Different Ministry Needs</h2>
+        <div class="additional-content-block"><h3>Bible Study Tools for Pastors</h3><p class="wp-block-paragraph"><a href="https://equip.jesusonline.com/pastors">Pastors</a> can use the Bible study tools to prepare sermons, explore Scripture in greater depth, and develop biblically grounded teaching.</p></div>
+        <div class="additional-content-block"><h3>Bible Study Tools for Home Church Leaders</h3><p class="wp-block-paragraph"><a href="https://equip.jesusonline.com/home-church-leaders">Home church leaders</a> can use JO Equip Bible study tools to study, prepare Bible discussions, and encourage meaningful discipleship.</p></div>
+        <div class="additional-content-block"><h3>Bible Study Tools for Chaplains</h3><p class="wp-block-paragraph"><a href="https://equip.jesusonline.com/chaplains">Chaplains</a> can use our Bible study tools to better understand and communicate Scripture when providing spiritual care and encouragement.</p></div>
+        <div class="additional-content-block"><h3>Bible Study Tools for Missionaries</h3><p class="wp-block-paragraph"><a href="https://equip.jesusonline.com/missionaries">Missionaries</a> can use the Bible study tools to deepen their understanding and prepare for teaching and discipleship across different ministry contexts.</p></div>
+      </section>
+
+      <section class="content-section" id="why-free-online-tools">
+        <h2 class="article-section-heading">Why Consider Free Online Bible Study Tools from JO EQUIP?</h2>
+        <p class="wp-block-paragraph">JO EQUIP, the ministry resource hub from JesusOnline, offers the best online Bible study tools for pastors, home church leaders, chaplains, missionaries and others at different stages of studying Scripture.</p>
+        <p class="wp-block-paragraph">Here are the benefits of choosing the JO EQUIP online Bible study tools and resources:</p>
+        <ol class="numbered-benefit-list">
+          <li><strong>Deeper Understanding:</strong> Our free online Bible study tools help you gain a deeper understanding of God's Word and explore connections between different passages.</li>
+          <li><strong>Historical and Cultural Clarity:</strong> Resources like study Bibles and atlases reveal the original context, idioms, and backgrounds of ancient audiences.</li>
+          <li><strong>Structure and Consistency:</strong> Workbooks and guided digital tools provide daily direction and keep you grounded in a steady routine.</li>
+          <li><strong>Practical Application:</strong> Our Bible study tools and resources bridge the gap between academic interpretation and personal transformation in your everyday life.</li>
+        </ol>
+      </section>
+
+      <section class="content-section" id="faqs">
+        <h2 class="article-section-heading">FAQs</h2>
+        <div class="faq-item"><h4>What are Bible Study Tools?</h4><p class="wp-block-paragraph">Bible study tools are resources, books, and digital platforms that help readers understand, study, interpret, and apply Scripture. They include Bible translations, commentaries, dictionaries, concordances, study guides, and other resources that provide helpful context and insights into Scripture. JO EQUIP from JesusOnline Ministries brings many of these resources together to help pastors, leaders, and Bible students explore Scripture, know God more deeply, and grow in His Word.</p></div>
+        <div class="faq-item"><h4>Where can I find free Bible study tools?</h4><p class="wp-block-paragraph">You can find free Bible study tools on websites like the <a href="https://bibleproject.com/" target="_blank" rel="noopener">BibleProject</a> and JO EQUIP from JesusOnline Ministries, which offers free animated overviews, podcasts, and guides.</p></div>
+        <div class="faq-item"><h4>What Bible study tools are useful for pastors, chaplains, and home church leaders?</h4><p class="wp-block-paragraph">Essential Bible study tools that are useful for pastors, chaplains, and home church leaders include comprehensive platforms, background commentaries, and original-language references that streamline sermon and lesson preparation.</p></div>
+        <div class="faq-item"><h4>What is the best Bible study tool for beginners?</h4><p class="wp-block-paragraph">For beginners, a simple online Bible with an easy-to-understand translation is a good place to start. JO EQUIP from JesusOnline Ministries also offers free Bible study resources to help you read, understand, and apply Scripture. As you grow in your study, you can explore commentaries, Bible dictionaries, and other study tools.</p></div>
+      </section>
+
+    </main>
+
+    <!-- Right Column: Sticky Sidebar Table of Contents -->
+    <aside class="sidebar-sticky-wrapper" aria-label="Article Sidebar">
+      
+      <!-- Sticky Table of Contents (Logos Feature with ScrollSpy) -->
+      <nav class="sidebar-toc-box" aria-label="Table of Contents">
+        <h3 class="sidebar-toc-title">
+          <span>Table of Contents</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+          </svg>
+        </h3>
+        <ul class="sidebar-toc-list">
+          <li><a href="#net-bible" class="sidebar-toc-link">1. NET Bible</a></li>
+          <li><a href="#bible-gateway" class="sidebar-toc-link">2. Bible Gateway</a></li>
+          <li><a href="#bible-hub" class="sidebar-toc-link">3. Bible Hub</a></li>
+          <li><a href="#bible-study-tools" class="sidebar-toc-link">4. Bible Study Tools</a></li>
+          <li><a href="#bibleproject" class="sidebar-toc-link">5. BibleProject</a></li>
+          <li><a href="#the-gospel-coalition" class="sidebar-toc-link">6. The Gospel Coalition</a></li>
+          <li><a href="#navigators-tools" class="sidebar-toc-link">7. The Navigators Tools</a></li>
+          <li><a href="#bible-translations" class="sidebar-toc-link">8. Bible Translations</a></li>
+          <li><a href="#scripture-memorization" class="sidebar-toc-link">9. Scripture Memorization</a></li>
+          <li><a href="#ministry-needs" class="sidebar-toc-link">10. Ministry Needs</a></li>
+          <li><a href="#why-free-online-tools" class="sidebar-toc-link">11. Why Free Online Tools?</a></li>
+          <li><a href="#faqs" class="sidebar-toc-link">12. FAQs</a></li>
+        </ul>
+      </nav>
+
+      <!-- JO App Card (equip.jesusonline.com Replica) -->
+      <div class="sidebar-promo-card">
+        <span class="sidebar-promo-badge">Free Resource</span>
+        <h4 class="sidebar-promo-title">Read on JO App</h4>
+        <p class="sidebar-promo-desc">
+          Read the NET Bible with 60,932 translation notes anywhere with the JesusOnline App.
+        </p>
+        <a href="https://app.jesusonline.com/reader" target="_blank" rel="noopener" class="btn-sidebar-cta">
+          Open JO App Reader &rarr;
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- JesusOnline Equip Site Footer (Exact Replica) -->
+  <footer class="jo-site-footer">
+    <div class="footer-inner-grid">
+      
+      <!-- Brand & Mission Col -->
+      <div class="footer-brand-col">
+        <div class="jo-brand-wrap">
+          <div class="jo-logo-symbol">JO</div>
+          <div class="jo-brand-text">
+            <div class="jo-brand-title">JO <span>EQUIP</span></div>
+            <div class="jo-brand-subtitle">Ministry Resources Hub</div>
+          </div>
+        </div>
+        <p>
+          A free digital library of practical discipleship tools for pastors and leaders for enhanced ministry impact.
+        </p>
+        <div style="font-size: 0.85rem; color: #94a3b8;">
+          <a href="https://equip.jesusonline.com" style="color: #93c5fd;">equip.jesusonline.com</a>
+        </div>
+      </div>
+
+      <!-- Explore Col -->
+      <div>
+        <h4 class="footer-col-title">Explore</h4>
+        <ul class="footer-links-list">
+          <li><a href="https://equip.jesusonline.com/categories">Categories</a></li>
+          <li><a href="https://equip.jesusonline.com/playlists">Playlists</a></li>
+          <li><a href="https://equip.jesusonline.com/books">Books</a></li>
+          <li><a href="https://equip.jesusonline.com/listen">Listen</a></li>
+        </ul>
+      </div>
+
+      <!-- Organization Col -->
+      <div>
+        <h4 class="footer-col-title">Organization</h4>
+        <ul class="footer-links-list">
+          <li><a href="https://jesusonlineministries.org/" target="_blank" rel="noopener">JesusOnlineMinistries.org</a></li>
+          <li><a href="https://equip.jesusonline.com/about">About</a></li>
+          <li><a href="https://equip.jesusonline.com/beliefs">Beliefs</a></li>
+          <li><a href="https://equip.jesusonline.com/newsletter">Newsletter</a></li>
+          <li><a href="mailto:equip@jesusonline.com">equip@jesusonline.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Legal -->
+    <div class="footer-bottom-bar">
+      <div>
+        &copy; 2026 JesusOnline Ministries. Site design and original JesusOnline content are protected by copyright. Third-party resources remain the property of their respective copyright owners and are used under license or permission.
+      </div>
+      <div class="footer-legal-links">
+        <a href="https://equip.jesusonline.com/sitemap">Sitemap</a>
+        <a href="https://jesusonlineministries.org/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript for Logos Accordions & TOC ScrollSpy -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  initReadingProgressBar();
+  initAccordions();
+  initTableOfContents();
+  initMobileNavigation();
+});
+
+/* 1. Reading Progress Bar */
+function initReadingProgressBar() {
+  const progressBar = document.getElementById('reading-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    progressBar.style.width = `${Math.min(100, Math.max(0, scrolled))}%`;
+  }, { passive: true });
+}
+
+/* 2. Logos Accordion Logic */
+function initAccordions() {
+  const accordionItems = document.querySelectorAll('.c-accordion__item');
+
+  accordionItems.forEach((item, index) => {
+    const title = item.querySelector('.c-accordion__title');
+    const content = item.querySelector('.c-accordion__content');
+    if (!title || !content) return;
+
+    const itemId = title.id || `accordion-btn-${index}`;
+    const contentId = content.id || `accordion-panel-${index}`;
+    title.id = itemId;
+    content.id = contentId;
+    title.setAttribute('role', 'button');
+    title.setAttribute('tabindex', '0');
+    title.setAttribute('aria-controls', contentId);
+
+    const initiallyOpen = item.getAttribute('data-initially-open') === 'true' || item.classList.contains('is-open');
+    if (initiallyOpen) {
+      item.classList.add('is-open');
+      title.setAttribute('aria-expanded', 'true');
+      content.style.display = 'block';
+    } else {
+      item.classList.remove('is-open');
+      title.setAttribute('aria-expanded', 'false');
+      content.style.display = 'none';
+    }
+
+    title.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleAccordionItem(item);
+    });
+
+    title.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleAccordionItem(item);
+      }
+    });
+  });
+
+  const expandAllBtn = document.getElementById('btn-expand-all');
+  const collapseAllBtn = document.getElementById('btn-collapse-all');
+
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', () => {
+      accordionItems.forEach(item => openAccordionItem(item));
+    });
+  }
+
+  if (collapseAllBtn) {
+    collapseAllBtn.addEventListener('click', () => {
+      accordionItems.forEach(item => closeAccordionItem(item));
+    });
+  }
+}
+
+function toggleAccordionItem(item) {
+  const isOpen = item.classList.contains('is-open');
+  const allowClickToClose = item.getAttribute('data-click-to-close') !== 'false';
+  const autoClose = item.getAttribute('data-auto-close') === 'true';
+
+  if (isOpen) {
+    if (allowClickToClose) {
+      closeAccordionItem(item);
+    }
+  } else {
+    if (autoClose) {
+      const parent = item.parentElement;
+      if (parent) {
+        const siblings = parent.querySelectorAll('.c-accordion__item');
+        siblings.forEach(sibling => {
+          if (sibling !== item && sibling.classList.contains('is-open')) {
+            closeAccordionItem(sibling);
+          }
+        });
+      }
+    }
+    openAccordionItem(item);
+  }
+}
+
+function openAccordionItem(item) {
+  const title = item.querySelector('.c-accordion__title');
+  const content = item.querySelector('.c-accordion__content');
+  if (!content) return;
+
+  item.classList.add('is-open');
+  if (title) title.setAttribute('aria-expanded', 'true');
+  content.style.display = 'block';
+}
+
+function closeAccordionItem(item) {
+  const title = item.querySelector('.c-accordion__title');
+  const content = item.querySelector('.c-accordion__content');
+  if (!content) return;
+
+  item.classList.remove('is-open');
+  if (title) title.setAttribute('aria-expanded', 'false');
+  content.style.display = 'none';
+}
+
+/* 3. Logos Table of Contents & ScrollSpy */
+function initTableOfContents() {
+  const tocLinks = document.querySelectorAll('.sidebar-toc-link, .logos-toc-link');
+  const sectionIds = Array.from(tocLinks)
+    .map(link => link.getAttribute('href'))
+    .filter(href => href && href.startsWith('#') && href.length > 1)
+    .map(href => href.substring(1));
+
+  const uniqueSectionIds = [...new Set(sectionIds)];
+  const sections = uniqueSectionIds
+    .map(id => document.getElementById(id))
+    .filter(el => el !== null);
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerOffset = 90;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          history.pushState(null, '', targetId);
+        }
+      }
+    });
+  });
+
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveTocLink(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  const tocToggleBtn = document.getElementById('btn-toggle-incontent-toc');
+  const tocList = document.getElementById('incontent-toc-list');
+  if (tocToggleBtn && tocList) {
+    tocToggleBtn.addEventListener('click', () => {
+      const isHidden = tocList.style.display === 'none';
+      tocList.style.display = isHidden ? 'grid' : 'none';
+      tocToggleBtn.textContent = isHidden ? '[Hide]' : '[Show]';
+    });
+  }
+}
+
+function setActiveTocLink(activeId) {
+  const sidebarLinks = document.querySelectorAll('.sidebar-toc-link');
+  sidebarLinks.forEach(link => {
+    if (link.getAttribute('href') === `#${activeId}`) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+/* 4. Mobile Navigation */
+function initMobileNavigation() {
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.querySelector('.jo-nav-menu');
+  if (!mobileBtn || !navMenu) return;
+
+  mobileBtn.addEventListener('click', () => {
+    const isVisible = navMenu.style.display === 'flex';
+    if (isVisible) {
+      navMenu.style.display = 'none';
+      mobileBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      navMenu.style.display = 'flex';
+      navMenu.style.flexDirection = 'column';
+      navMenu.style.position = 'absolute';
+      navMenu.style.top = '72px';
+      navMenu.style.left = '0';
+      navMenu.style.right = '0';
+      navMenu.style.background = '#0f2942';
+      navMenu.style.padding = '1rem 1.5rem';
+      mobileBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+}
+  </script>
+</body>
+</html>
